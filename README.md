@@ -7,3 +7,6 @@ Welcome to the **Fitness Enthusiasts Hub** project repository. This project is a
 - **Vite**: Build tool for fast development and bundling
 - **Firebase**: Backend-as-a-Service (authentication, database, hosting, etc.)
 - **Figma**: UI/UX design platform
+
+##The UI/UX design for the project is available on Figma. 
+[View the design here.](https://www.figma.com/design/BHheFkou7NWjxk3PR44bG6/OOAP?node-id=0-1)
