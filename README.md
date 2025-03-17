@@ -10,3 +10,6 @@ Welcome to the **Fitness Enthusiasts Hub** project repository. This project is a
 
 ##The UI/UX design for the project is available on Figma. 
 [View the design here.](https://www.figma.com/design/BHheFkou7NWjxk3PR44bG6/OOAP?node-id=0-1)
+
+##Jira for project
+[View the design here.]([https://www.figma.com/design/BHheFkou7NWjxk3PR44bG6/OOAP?node-id=0-1](https://ooap.atlassian.net/jira/software/projects/OOAP/boards/1))
