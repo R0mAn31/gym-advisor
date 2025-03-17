@@ -15,4 +15,5 @@ Welcome to the **Fitness Enthusiasts Hub** project repository. This project is a
 [Check Jira here.](https://ooap.atlassian.net/jira/software/projects/OOAP/boards/1)
 
 ##Project plan:
+
 <img src="https://github.com/R0mAn31/gym-advisor/blob/main/documentation/Screenshot%202025-03-17%20at%2017.05.29.png" width="860" />
