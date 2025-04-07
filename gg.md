@@ -1,6 +1,7 @@
 ---
 
 #### Test: Render Content For Admins
+---
 ```javascript
 test('should render children when user is an admin', () => {
   // Mock auth context with admin user
