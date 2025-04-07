@@ -90,8 +90,8 @@ const ChatAI = () => {
       }
       
       // Process subsections with triple asterisks (commonly used in AI text)
-      if (line.match(/^\*\*\*/)) {
-        const subSectionText = line.replace(/^\*\*\*/, '').trim();
+      if (line.startsWith('***')) {
+        const subSectionText = line.replace(/^\*{3,}/, '').replace(/\*+$/, '').trim();
         const processedText = processInlineFormatting(subSectionText);
         
         if (inSubSection) {
@@ -104,8 +104,8 @@ const ChatAI = () => {
       }
       
       // Process sections with double asterisks 
-      if (line.match(/^\*\*/)) {
-        const sectionText = line.replace(/^\*\*/, '').trim();
+      if (line.startsWith('**')) {
+        const sectionText = line.replace(/^\*{2,}/, '').replace(/\*+$/, '').trim();
         const processedText = processInlineFormatting(sectionText);
         
         if (inSection || inSubSection) {
