@@ -1,7 +1,5 @@
----
 
 #### Test: Render Content For Admins
----
 ```javascript
 test('should render children when user is an admin', () => {
   // Mock auth context with admin user
@@ -22,7 +20,7 @@ test('should render children when user is an admin', () => {
   expect(screen.getByTestId('admin-content')).toBeInTheDocument();
 });
 ```
-
+---
 **Description**: This test ensures that admin users can access admin-only content.
 
 **Setup**:
@@ -56,7 +54,6 @@ test('should render logo and navigation links', () => {
 **Expected Behavior**:
 - The application name/logo should be displayed
 - Navigation links to the home page and gyms page should be visible
-
 ---
 
 #### Test: Unauthenticated User UI
