@@ -1,0 +1,12 @@
+{
+  "name": "gym-advisor-unit-tests",
+  "version": "1.0.0",
+  "description": "Unit tests for Gym Advisor",
+  "main": "basic.test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
