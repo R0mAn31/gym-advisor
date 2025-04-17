@@ -169,6 +169,16 @@ const Header = () => {
             )}
 
             <ListItem disablePadding>
+              <ListItemButton
+                component={Link}
+                to="/chat"
+                selected={isActive("/chat")}
+              >
+                <ListItemText primary="Чат з AI" />
+              </ListItemButton>
+            </ListItem>
+
+            <ListItem disablePadding>
               <ListItemButton onClick={handleLogout}>
                 <ListItemIcon>
                   <LogoutIcon />
@@ -249,7 +259,7 @@ const Header = () => {
                   color="inherit"
                   component={Link}
                   to="/gyms"
-                  sx={{ mx: 1, fontWeight: isActive('/gyms') ? 700 : 400 }}
+                  sx={{ mx: 1, fontWeight: isActive("/gyms") ? 700 : 400 }}
                   startIcon={<FitnessCenterIcon />}
                 >
                   Спортзали
@@ -321,17 +331,25 @@ const Header = () => {
                 )}
 
                 {/* Додаємо перемикач темної теми */}
-                <Tooltip title={theme.palette.mode === 'dark' ? 'Світла тема' : 'Темна тема'}>
+                <Tooltip
+                  title={
+                    theme.palette.mode === "dark" ? "Світла тема" : "Темна тема"
+                  }
+                >
                   <IconButton
                     onClick={colorMode.toggleColorMode}
                     color="inherit"
-                    sx={{ 
+                    sx={{
                       ml: 1,
-                      transition: 'transform 0.3s',
-                      '&:hover': { transform: 'rotate(15deg)' }
+                      transition: "transform 0.3s",
+                      "&:hover": { transform: "rotate(15deg)" },
                     }}
                   >
-                    {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                    {theme.palette.mode === "dark" ? (
+                      <Brightness7Icon />
+                    ) : (
+                      <Brightness4Icon />
+                    )}
                   </IconButton>
                 </Tooltip>
               </Box>
