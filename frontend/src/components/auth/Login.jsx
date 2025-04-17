@@ -170,7 +170,7 @@ const Login = () => {
               </Box>
             </form>
 
-            {/* <Box sx={{ display: 'flex', alignItems: 'center', my: 2 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', my: 2 }}>
               <Divider sx={{ flexGrow: 1 }} />
               <Typography variant="body2" color="text.secondary" sx={{ mx: 1 }}>
                 АБО
@@ -187,7 +187,7 @@ const Login = () => {
               sx={{ py: 1.2 }}
             >
               Увійти через Google
-            </Button> */}
+            </Button>
           </Paper>
         </Grid>
       </Grid>
