@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
-import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../../services/auth'
-import { useAuth } from '../../contexts/AuthContext'
-import { Navigate, Link as RouterLink } from 'react-router-dom';
+/** @format */
+
+import React, { useState } from "react";
+import {
+  doSignInWithEmailAndPassword,
+  doSignInWithGoogle,
+} from "../../services/auth";
+import { useAuth } from "../../contexts/AuthContext";
+import { Navigate, Link as RouterLink } from "react-router-dom";
 import {
   Container,
   Typography,
@@ -15,31 +20,31 @@ import {
   InputAdornment,
   IconButton,
   Alert,
-  CircularProgress
-} from '@mui/material';
+  CircularProgress,
+} from "@mui/material";
 import {
   Email as EmailIcon,
   Lock as LockIcon,
   Visibility as VisibilityIcon,
   VisibilityOff as VisibilityOffIcon,
-  Google as GoogleIcon
-} from '@mui/icons-material';
+  Google as GoogleIcon,
+} from "@mui/icons-material";
 
 const Login = () => {
   const { userLoggedIn } = useAuth();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isSigningIn, setIsSigningIn] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
     if (!isSigningIn) {
       setIsSigningIn(true);
-      setErrorMessage('');
-      
+      setErrorMessage("");
+
       const result = await doSignInWithEmailAndPassword(email, password);
       if (result.error) {
         setErrorMessage(result.error);
@@ -52,17 +57,17 @@ const Login = () => {
     e.preventDefault();
     if (!isSigningIn) {
       setIsSigningIn(true);
-      setErrorMessage('');
-      
+      setErrorMessage("");
+
       doSignInWithGoogle()
-        .then(result => {
+        .then((result) => {
           if (result.error) {
             setErrorMessage(result.error);
             setIsSigningIn(false);
           }
         })
-        .catch(err => {
-          setErrorMessage('Помилка входу через Google');
+        .catch((err) => {
+          setErrorMessage("Помилка входу через Google");
           setIsSigningIn(false);
         });
     }
@@ -77,11 +82,11 @@ const Login = () => {
   }
 
   return (
-    <Container maxWidth="xs" sx={{ display: 'flex', minHeight: '100vh' }}>
-      <Grid container sx={{ my: 'auto', py: 4 }}>
+    <Container maxWidth="xs" sx={{ display: "flex", minHeight: "100vh" }}>
+      <Grid container sx={{ my: "auto", py: 4 }}>
         <Grid item xs={12}>
           <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
-            <Box sx={{ textAlign: 'center', mb: 3 }}>
+            <Box sx={{ textAlign: "center", mb: 3 }}>
               <Typography variant="h5" fontWeight="bold">
                 Вхід до облікового запису
               </Typography>
@@ -89,7 +94,7 @@ const Login = () => {
                 Раді бачити вас знову!
               </Typography>
             </Box>
-            
+
             <form onSubmit={onSubmit}>
               <TextField
                 fullWidth
@@ -108,11 +113,11 @@ const Login = () => {
                   ),
                 }}
               />
-              
+
               <TextField
                 fullWidth
                 label="Пароль"
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 margin="normal"
@@ -126,23 +131,24 @@ const Login = () => {
                   ),
                   endAdornment: (
                     <InputAdornment position="end">
-                      <IconButton
-                        onClick={handleTogglePassword}
-                        edge="end"
-                      >
-                        {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                      <IconButton onClick={handleTogglePassword} edge="end">
+                        {showPassword ? (
+                          <VisibilityOffIcon />
+                        ) : (
+                          <VisibilityIcon />
+                        )}
                       </IconButton>
                     </InputAdornment>
                   ),
                 }}
               />
-              
+
               {errorMessage && (
                 <Alert severity="error" sx={{ mt: 2 }}>
                   {errorMessage}
                 </Alert>
               )}
-              
+
               <Button
                 type="submit"
                 fullWidth
@@ -153,18 +159,18 @@ const Login = () => {
                 {isSigningIn ? (
                   <CircularProgress size={24} color="inherit" />
                 ) : (
-                  'Увійти'
+                  "Увійти"
                 )}
               </Button>
-              
-              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
                 <Link component={RouterLink} to="/register" variant="body2">
                   Немає облікового запису? Зареєструватися
                 </Link>
               </Box>
             </form>
-            
-            <Box sx={{ display: 'flex', alignItems: 'center', my: 2 }}>
+
+            {/* <Box sx={{ display: 'flex', alignItems: 'center', my: 2 }}>
               <Divider sx={{ flexGrow: 1 }} />
               <Typography variant="body2" color="text.secondary" sx={{ mx: 1 }}>
                 АБО
@@ -181,7 +187,7 @@ const Login = () => {
               sx={{ py: 1.2 }}
             >
               Увійти через Google
-            </Button>
+            </Button> */}
           </Paper>
         </Grid>
       </Grid>
