@@ -1,0 +1,13 @@
+{
+  "name": "gym-advisor",
+  "version": "1.0.0",
+  "description": "Gym Advisor platform with frontend and backend",
+  "scripts": {
+    "test": "npm run test:frontend && npm run test:api && npm run test:unit",
+    "test:frontend": "cd frontend && npm test -- --watchAll=false",
+    "test:api": "cd tests/api && npm test",
+    "test:unit": "cd tests/unit && NODE_ENV=test npx jest"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
