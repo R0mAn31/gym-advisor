@@ -245,16 +245,15 @@ const Header = () => {
                 </Button>
 
                 {/* Додаємо кнопку для спортзалів */}
-                {/* <Button 
-                  color="inherit" 
-                  component={Link} 
+                <Button
+                  color="inherit"
+                  component={Link}
                   to="/gyms"
                   sx={{ mx: 1, fontWeight: isActive('/gyms') ? 700 : 400 }}
                   startIcon={<FitnessCenterIcon />}
                 >
                   Спортзали
                 </Button>
-                 */}
                 {!userLoggedIn ? (
                   <>
                     <Button
@@ -322,7 +321,7 @@ const Header = () => {
                 )}
 
                 {/* Додаємо перемикач темної теми */}
-                {/* <Tooltip title={theme.palette.mode === 'dark' ? 'Світла тема' : 'Темна тема'}>
+                <Tooltip title={theme.palette.mode === 'dark' ? 'Світла тема' : 'Темна тема'}>
                   <IconButton
                     onClick={colorMode.toggleColorMode}
                     color="inherit"
@@ -334,7 +333,7 @@ const Header = () => {
                   >
                     {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
                   </IconButton>
-                </Tooltip> */}
+                </Tooltip>
               </Box>
             )}
           </Toolbar>
