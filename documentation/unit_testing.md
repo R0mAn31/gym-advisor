@@ -229,3 +229,138 @@
 2. Write additional tests targeting uncovered code paths
 3. Run coverage report again to verify improvement
    **Expected Result**: Test coverage percentage increases
+
+## 9. Implemented Tests Overview
+
+The following section documents the 60 tests currently implemented in the project:
+
+### Authentication Service Tests (11 tests)
+
+These tests verify that authentication services interact correctly with Firebase Authentication:
+
+1. **Sign in with valid credentials**: Verifies users can sign in with correct email/password
+2. **Handle invalid credentials**: Checks appropriate errors are thrown for invalid credentials
+3. **User account creation**: Tests that new user accounts can be created successfully
+4. **Handle duplicate email**: Ensures errors are thrown when registering with existing email
+5. **User sign out**: Verifies sign out functionality works correctly
+6. **Get current user**: Checks that the currently authenticated user can be retrieved
+7. **Handle no authenticated user**: Ensures null is returned when no user is signed in
+8. **Update user profile**: Tests that user profile information can be updated
+9. **Handle missing user for profile update**: Verifies error is thrown when no user is provided
+10. **Password reset email**: Tests sending password reset emails to existing users
+11. **Handle password reset for non-existent user**: Ensures error is thrown for invalid users
+
+### Database Service Tests (6 tests)
+
+These tests verify that database service functions interact correctly with Firestore:
+
+1. **Fetch document by ID**: Tests retrieving a document by its ID from a collection
+2. **Handle non-existent document**: Ensures null is returned for documents that don't exist
+3. **Add new document**: Tests adding new documents to a collection
+4. **Update existing document**: Verifies existing documents can be updated
+5. **Delete document**: Tests deleting documents from a collection
+6. **Fetch all documents**: Verifies retrieving all documents from a collection
+
+### Authentication Context Tests (5 tests)
+
+These tests verify the functionality of the AuthContext provider:
+
+1. **Render auth provider with children**: Tests the provider renders its children
+2. **Initialize with current user**: Verifies context initializes with the current Firebase user
+3. **Provide auth context to children**: Tests that child components can access auth context
+4. **Show children after loading**: Ensures children are only shown after auth state resolves
+5. **Fetch user profile after authentication**: Tests user profile is fetched after authentication
+
+### Post Components Tests (33 tests)
+
+#### PostCard Tests (7 tests)
+1. **Render post details**: Tests rendering of post title, content, author
+2. **Link to view post**: Verifies post card has a link to view the full post
+3. **Hide edit options for non-authors**: Tests that edit/delete options are hidden for non-authors
+4. **Show edit options for authors**: Verifies authors can see edit/delete options
+5. **Call delete function**: Tests that delete function is called when delete button is clicked
+6. **Truncate long content**: Verifies long content is truncated with ellipsis
+7. **Format date correctly**: Tests that post date is formatted correctly
+
+#### PostList Tests (15 tests)
+1. **Render loading state**: Tests loading state display
+2. **Render post list**: Verifies posts are displayed after loading
+3. **Filter by category**: Tests filtering posts by category
+4. **Filter by tag**: Tests filtering posts by tag
+5. **Filter by author**: Tests filtering posts by author (userId)
+6. **Sort by recent date**: Verifies posts are sorted by recent date by default
+7. **Sort by popularity**: Tests sorting posts by popularity
+8. **Load more posts**: Verifies more posts load when button is clicked
+9. **Hide load more button**: Tests button is hidden when no more posts
+10. **Display author information**: Verifies author name and avatar are displayed
+11. **Format post date**: Tests post date format display
+12. **Display post tags**: Verifies tags are properly displayed
+13. **Display engagement metrics**: Tests like and comment counts display
+14. **Show error message**: Verifies error message displays when posts fail to load
+15. **Show empty state**: Tests message display when no posts match filters
+
+#### PostDetail Tests (12 tests)
+1. **Render loading state**: Tests loading state appearance
+2. **Render error state**: Verifies error state is displayed properly
+3. **Render not found state**: Tests display when post is null
+4. **Render post details**: Verifies title, content, author, etc. are displayed
+5. **Handle missing author**: Tests "Anonymous" is shown when author is not provided
+6. **Handle missing image**: Verifies component works without an image URL
+7. **Delete post**: Tests delete button functionality
+8. **Work with MemoryRouter**: Verifies compatibility with React Router
+9. **Handle special characters**: Tests display of content with special characters
+10. **Handle long content**: Verifies very long content displays correctly
+11. **Handle missing title**: Tests graceful handling of missing title
+12. **Handle missing content**: Verifies component works with no content
+
+#### PostCreate and NewPostForm Tests (22 tests)
+1. **Render post form**: Tests form field rendering
+2. **Require authentication**: Verifies form requires user to be logged in
+3. **Fill out form**: Tests entering data in form fields
+4. **Validate required fields**: Verifies validation of required fields
+5. **Upload image**: Tests image upload functionality
+6. **Show upload progress**: Verifies progress bar during upload
+7. **Submit form**: Tests post creation on form submission
+8. **Upload image before submission**: Verifies image upload before post creation
+9. **Handle creation errors**: Tests error handling during post creation
+10. **Handle upload errors**: Verifies error handling during image upload
+11. **Show post preview**: Tests preview functionality
+12. **Return to edit mode**: Verifies return from preview to edit mode
+13. **Save as draft**: Tests saving post as draft
+14. **Update input values**: Verifies form fields update when user types
+15. **Display validation errors**: Tests error messages for empty fields
+16. **Call onSubmit with data**: Verifies callback with form data
+17. **Clear fields after submission**: Tests form reset after successful submission
+18. **Disable during loading**: Verifies form elements disabled during loading
+19. **Prevent invalid submission**: Tests that onSubmit isn't called for invalid forms
+20. **Clear error on valid submission**: Verifies error message clears on valid submission
+
+### Gym Components Tests (22 tests)
+
+#### GymDetail Tests (16 tests)
+1. **Render loading state**: Tests loading indicator display
+2. **Render gym details**: Verifies gym information display after loading
+3. **Display rating**: Tests gym rating display
+4. **Display working hours**: Verifies working hours display correctly
+5. **Display equipment and amenities**: Tests amenities list display
+6. **Display contact information**: Verifies contact details display
+7. **Display map location**: Tests map rendering with correct location
+8. **Display reviews**: Verifies gym reviews display
+9. **Format review dates**: Tests review date formatting
+10. **Calculate average rating**: Verifies average rating calculation from reviews
+11. **Show review form for authenticated users**: Tests review form display for logged-in users
+12. **Hide review form for anonymous users**: Verifies form is hidden for guests
+13. **Handle missing gym**: Tests error state when gym is not found
+14. **Handle loading errors**: Verifies error handling during gym data loading
+15. **Handle review loading errors**: Tests error handling during review loading
+16. **Record check-ins**: Verifies check-in functionality
+
+#### CityGymsFetcher Tests (6 tests)
+1. **Render initial state**: Tests initial component rendering
+2. **Fetch gyms**: Verifies gym data fetching from API
+3. **Save gyms to Firebase**: Tests saving gym data to database
+4. **Handle fetch errors**: Verifies error handling during API fetching
+5. **Handle database errors**: Tests error handling during database operations
+6. **Change city for search**: Verifies city input functionality
+
+This comprehensive test suite ensures the Gym Advisor application is thoroughly tested across authentication, data management, and UI components.
