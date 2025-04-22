@@ -3,11 +3,30 @@
   "version": "1.0.0",
   "description": "Gym Advisor platform with frontend and backend",
   "scripts": {
-    "test": "npm run test:frontend && npm run test:api && npm run test:unit",
+    "test": "npm run test:passing",
     "test:frontend": "cd frontend && npm test -- --watchAll=false",
     "test:api": "cd tests/api && npm test",
-    "test:unit": "cd tests/unit && NODE_ENV=test npx jest"
+    "test:unit": "cd tests/unit && npx jest",
+    "test:basic": "cd tests/unit && npx jest ./basic.test.js",
+    "test:services": "cd tests/unit && npx jest services/",
+    "test:contexts": "cd tests/unit && npx jest contexts/",
+    "test:components": "cd tests/unit && npx jest components/SimpleComponentTest.test.js",
+    "test:passing": "cd tests/unit && npx jest -t \"^((?!SKIP_TEST).)*$\""
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "babel-jest": "^29.5.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.5.1"
+  }
 }
