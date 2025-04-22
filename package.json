@@ -11,7 +11,7 @@
     "test:services": "cd tests/unit && npx jest services/",
     "test:contexts": "cd tests/unit && npx jest contexts/",
     "test:components": "cd tests/unit && npx jest components/SimpleComponentTest.test.js",
-    "test:passing": "cd tests/unit && npx jest -t \"^((?!SKIP_TEST).)*$\""
+    "test:passing": "cd tests/unit && npx jest -t \"^((?!SKIP_TEST).)*$\" --coverage --config=jest.config.js"
   },
   "dependencies": {},
   "devDependencies": {

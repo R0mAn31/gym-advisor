@@ -30,9 +30,9 @@ module.exports = {
   coverageReporters: ['text', 'lcov'],
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
-    'frontend/src/**/*.{js,jsx}',
-    '!frontend/src/index.js',
-    '!frontend/src/reportWebVitals.js',
+    '../../frontend/src/**/*.{js,jsx}',
+    '!../../frontend/src/index.js',
+    '!../../frontend/src/reportWebVitals.js',
     '!**/node_modules/**'
   ],
   moduleDirectories: ['node_modules', 'src'],
