@@ -110,6 +110,16 @@ const Header = () => {
           </ListItemButton>
         </ListItem>
 
+        <ListItem disablePadding>
+          <ListItemButton
+            component={Link}
+            to="/chat"
+            selected={isActive("/chat")}
+          >
+            <ListItemText primary="Чат з AI" />
+          </ListItemButton>
+        </ListItem>
+
         {!userLoggedIn ? (
           <>
             <ListItem disablePadding>
@@ -167,16 +177,6 @@ const Header = () => {
                 </ListItemButton>
               </ListItem>
             )}
-
-            <ListItem disablePadding>
-              <ListItemButton
-                component={Link}
-                to="/chat"
-                selected={isActive("/chat")}
-              >
-                <ListItemText primary="Чат з AI" />
-              </ListItemButton>
-            </ListItem>
 
             <ListItem disablePadding>
               <ListItemButton onClick={handleLogout}>
